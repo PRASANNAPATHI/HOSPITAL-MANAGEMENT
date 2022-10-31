@@ -1,0 +1,220 @@
+<html>
+<head>
+<title>PRASANNA HOSPITAL</title>
+<link rel="stylesheet" href="styleforhospital.css">
+
+</head>
+         
+<body>
+
+    <script>
+    
+	function validateph()
+	{
+    var num=document.getElementById("phno").value;
+	if(num==""){
+	  document.getElementById("phono").innerHTML="*please enter the mobile number*";
+	  document.patform.phno.focus();
+	  return false;
+	  }
+	if(isNaN(num)){
+	  document.getElementById("phono").innerHTML="*Only numbers are allowed*";
+	  document.patform.phno.focus();
+	  return false;
+	  }
+	 
+	if((num.length>10)||(num.length<10)){
+      document.getElementById("phono").innerHTML="*Only 10 digits allowed*";
+	  document.patform.phno.focus();
+	  return false;
+	  }
+	if((num.charAt(0)!=9)&&(num.charAt(0)!=8)&& (num.charAt(0)!=7)){
+	  document.getElementById("phono").innerHTML="*Invalid...Must start with 9 or 8 or 7*";
+	  document.patform.phno.focus();
+	  return false;
+	  }
+	if(num.length==10){
+
+	  return true;
+	  }
+}
+function validateht()
+	{
+    var num=document.getElementById("height").value;
+	if(num==""){
+	  document.getElementById("ht").innerHTML="*please enter the height*";
+	  document.patform.height.focus();
+	  return false;
+	  }
+	if(isNaN(num)){
+	  document.getElementById("ht").innerHTML="*Enter a valid height*";
+	  document.patform.height.focus();
+	  return false;
+	  }
+	 
+
+	if(num.length<0){
+	  document.getElementById("ht").innerHTML="*Enter a valid height*";
+	  document.patform.height.focus();
+	  return false;
+	  }
+	 else
+	 return true;
+}
+
+function validatewt()
+	{
+    var num=document.getElementById("weight").value;
+	if(num==""){
+	  document.getElementById("wt").innerHTML="*please enter the weight*";
+	  document.patform.weight.focus();
+	  return false;
+	  }
+	if(isNaN(num)){
+	  document.getElementById("wt").innerHTML="*Enter a valid weight*";
+	  document.patform.weight.focus();
+	  return false;
+	  }
+	 
+
+	if(num.length<0){
+	  document.getElementById("wt").innerHTML="*Enter a valid weight*";
+	  document.patform.weight.focus();
+	  return false;
+	  }
+	 else 
+	 return true;
+}
+function validatead()
+	{
+    var num=document.getElementById("address").value;
+	if(num==""){
+	  document.getElementById("ad").innerHTML="*please enter the address*";
+	  document.patform.address.focus();
+	  return false;
+	  }
+	 else 
+	 return true;
+}
+function validatename(inputtxt)
+      { 
+      var letters = /^[A-Za-z.. ]+$/;
+      if(inputtxt.value.match(letters))
+      {
+ 
+      return true;
+      }
+      else
+      {
+	  document.getElementById("fname").innerHTML="*Please Enter valid name*";
+	  document.patform.firstName.focus();
+      return false;
+      }
+      }
+function ValidateEmail(inputText)
+{
+var mailformat =  /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+if(inputText.value==""){
+	document.getElementById("emailid").innerHTML="*Plese provide your Email ID*";
+	document.patform.email.focus();
+	return false;
+}
+if(inputText.value.match(mailformat))
+{
+
+return true;
+}
+else
+{
+document.getElementById("emailid").innerHTML="*Enter a valid Email ID*";
+document.patform.email.focus();
+return false;
+}
+}
+</script>
+
+<img src="p1.jpg" height=50; width=50; style="vertical-align: middle; margin: 50px 350px">
+<div class="centered"><h1>PRASANNA HOSPITAL </h1></div>
+<hr align="left" size=5 width=100% color="darkblue">
+<br>
+<marquee behaviour="scroll" direction="left" scrollamount="10"><h2 style="color:darkblue">THIS IS THE WORLD'S BEST HOSPITAL   BEST TREATMENT AT LOW COST
+</h2></marquee>
+<div class="navbar">
+<a href='Prasanna Hospital.html'>Home</a>
+<a href='About us.html'>About us</a>
+<a href='contact.html'>Contact</a>
+<a href='Consultants.html'>Consultants</a>
+<a href='frames.html'>Consultants(FRAMES)</a>
+<a href='hospmap.html'>Hospital Map</a>
+<a href='pat_reg.html'>Patient Registration(FORM)</a>
+<a href='#' class="right">Feedback</a>
+</div>
+
+
+<h2 ><b>PATIENT REGISTRATION</b></h2>
+
+ <body>
+ <table  border="3" align="center">
+  <form name = "patform" autocomplete = "off" action="reg.html"onsubmit="return ((validateph()&  validateht() & validatewt() & ValidateEmail(document.patform.email)& validatead() &validatename(document.patform.firstName))==1)">
+ <tr><td><label>Name:</label></td>
+<td><input type = "text" id = "firstName" placeholder = "Name" />  <span id="fname" style="color:white"></span></td>
+ </tr>
+
+ <tr><td><label>Address:</label></td>
+<td ><input type = "text" id = "address" placeholder = "Doorno., st, dt." /> 
+<span id="ad" style="color:white"></span></td>
+ </tr>
+ <tr>
+ <td>Gender:</td>
+ <td ><input type="radio" id="male" name="gender" value="male" required><label for ="male">Male</label>
+ <input type="radio" id="female" name="gender" value="female"><label for ="female">Female</label>
+ <input type="radio" id="others" name="gender" value="others"><label for ="others">Others</label></td>
+ </tr>
+ <tr>
+ <td>
+ <label "background-color:blue">Email:</label></td>
+<td><input type = "text" id = "email" placeholder = "" /><span id="emailid" style="color:white"></span>
+</td>
+</tr>
+<tr>
+<td>
+<label>D.O.B:</label></td>
+<td>
+<input type="date" id= "birthday" required>
+</td>
+</tr>
+
+<tr>
+<td>
+<label>Height(IN CMS):</label></td>
+<td>
+<input type="text" id= "height" ><span id="ht" style="color:white"></span>
+</td>
+</tr>
+
+<tr>
+<td>
+<label>Weight(IN KG):</label></td>
+<td>
+<input type="text" id= "weight" ><span id="wt" style="color:white"></span>
+</td>
+</tr>
+
+<tr>
+<td>
+<label>Ph. No.:</label></td>
+<td>
+<input type="tel" id= "phno" >
+<span id="phono" style="color:white"></span>
+</td>
+</tr>
+</table>
+
+<br>
+<p style="text-align: center">
+ <input type="submit" name="submit" value="Submit"  />
+
+ <input type = "reset" value = "Clear" />
+ </p></form>
+</body>
+</html>

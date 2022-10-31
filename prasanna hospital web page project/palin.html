@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>palindrome,reverse,sum</title>
+<script type="text/javascript">
+function palindrome()
+{
+	var a,b,c,d,f,num3,n=0,n1;
+	num3=document.getElementById("input").value;
+	a=parseInt(num3);
+	f=a;
+	while(a>10)
+	{
+		b=a%10;
+		c=parseInt(b);
+		n=(n*10)+c;
+		n1=parseInt(n);
+		a=a/10;
+		if(a<10)
+		{
+			d=parseInt(a);
+			n=(n*10)+d;
+			n1=parseInt(n);
+		}
+	}
+	if(n1==f)
+		document.writeln("is a palindrome");
+	else
+		document.writeln("is not a palindrome");
+}
+
+</script>
+</head>
+<body bgcolor="pink">
+enter the number:<input type="text" id="input"><br>
+<input type="button" id="pld" value="palindrome" onclick="palindrome()"><br>
+
+</body>
+</html>
